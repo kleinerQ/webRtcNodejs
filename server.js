@@ -1,4 +1,4 @@
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0";
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 const static = require('node-static');
 const http = require('http');
