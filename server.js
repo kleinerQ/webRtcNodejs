@@ -1,6 +1,6 @@
 var express = require('express');
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 2013;
-var ipadr = process.env.OPENSHIFT_NODEJS_IP || "172.30.125.108";
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipadr = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 const static = require('node-static');
 const http = require('http');
 const file = new(static.Server)();
