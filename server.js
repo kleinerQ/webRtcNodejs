@@ -1,11 +1,11 @@
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0";
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipadr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 const static = require('node-static');
 const http = require('http');
 const file = new(static.Server)();
 const app = http.createServer(function (req, res) {
                               file.serve(req, res);
-                              }).listen(port,ipaddress);
+                              }).listen(port,ipadr);
 
 const io = require('socket.io').listen(app); //侦听 2013
 
