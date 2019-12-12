@@ -1,3 +1,4 @@
+var express = require('express');
 var port      = process.env.OPENSHIFT_NODEJS_PORT || 2013;
 var ipadr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 const static = require('node-static');
