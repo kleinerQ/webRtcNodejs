@@ -1,9 +1,11 @@
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 const static = require('node-static');
 const http = require('http');
 const file = new(static.Server)();
 const app = http.createServer(function (req, res) {
                               file.serve(req, res);
-                              }).listen(2013);
+                              }).listen(port,ipaddress);
 
 const io = require('socket.io').listen(app); //侦听 2013
 
