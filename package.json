@@ -8,7 +8,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-      "socket.io": "latest"
+    "node-static": "^0.7.11",
+    "socket.io": "latest"
   },
   "author": "",
   "license": "ISC"
