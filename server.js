@@ -69,7 +69,10 @@ io.sockets.on('connection', (socket) => {
                                               ' joined room ' + room);
                         
                         });
-              
+              socket.on('cancelCalling', (room) => { //收到 “cancelCalling” 消息
+                        io.sockets.in(room).emit('cancelCalling',room);
+                        
+                        });
               socket.on('sdp', (room , spdInfo) => { //收到 “spd” 消息
                         io.sockets.in(room).emit('sdp', spdInfo);
                         
